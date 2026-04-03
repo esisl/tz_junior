@@ -31,7 +31,7 @@ $path = parse_url($requestUri, PHP_URL_PATH);
 
 // Убираем базовый путь (если API находится в поддиректории)
 // Для корня сайта оставляем как есть
-$basePath = '/tz_junior/public'; // Измените на пустую строку '', если проект в корне
+$basePath = '/tz_junior/public';
 $path = str_replace($basePath, '', $path);
 
 // Нормализуем путь (убираем двойные слеши, конечные слеши)

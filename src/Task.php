@@ -82,7 +82,7 @@ private PDO $db;
             'title'       => $title,
             'description' => $description ?: null,
             'status'      => $status,
-            'updated_at'  => date('Y-m-d H:i:s'), // Заполняем DATETIME вручную
+            'updated_at'  => date('Y-m-d H:i:s'), // Заполняем DATETIME вручную, потому что старый mysql
         ]);
 
         return (int) $this->db->lastInsertId();
@@ -122,7 +122,7 @@ private PDO $db;
             }
         }
 
-        // Формируем динамический запрос UPDATE
+        // Формируем запрос UPDATE
         $fields = [];
         $values = ['id' => $id];
 

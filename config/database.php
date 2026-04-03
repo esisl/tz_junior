@@ -1,5 +1,4 @@
 <?php
-// config/database.php
 
 return [
     'host'     => 'localhost',

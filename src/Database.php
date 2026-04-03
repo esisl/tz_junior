@@ -28,7 +28,6 @@ private ?PDO $connection = null;
         try {
             $this->connection = new PDO($dsn, $config['username'], $config['password'], $options);
         } catch (PDOException $e) {
-            // В продакшене ошибку нужно логировать в файл, а не выводить пользователю
             error_log('Database connection failed: ' . $e->getMessage());
             throw new RuntimeException('Database connection failed');
         }
