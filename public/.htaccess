@@ -1,4 +1,10 @@
 RewriteEngine On
+
+# Разрешить CORS preflight
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# Перенаправлять все запросы на index.php, если файл не существует
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ api/index.php [QSA,L]
+RewriteRule ^ index.php [QSA,L]
